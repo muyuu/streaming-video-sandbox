@@ -1,0 +1,24 @@
+{
+  "plugins": ["stylelint-no-unused-selectors"],
+  "rules": {
+    "declaration-block-no-duplicate-properties": true,
+    "function-url-quotes": "always",
+    "selector-pseudo-element-colon-notation": "double",
+    "plugin/no-unused-selectors": {
+      "plugins": [
+        {
+          "test": "\\.jsx?$",
+          "plugin": "stylelint-no-unused-selectors-plugin-jsx",
+          "options": {
+            "sourceType": "module",
+            "plugins": ["jsx", "flow", "classProperties"]
+          }
+        },
+        {
+          "test": "\\.tsx$",
+          "plugin": "stylelint-no-unused-selectors-plugin-tsx"
+        }
+      ]
+    }
+  }
+}

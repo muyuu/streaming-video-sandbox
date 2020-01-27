@@ -35,7 +35,7 @@ export function HLSPlayer({ playlist, autoplay = false, muted = false, putLog = 
                 controls
                 ref={videoRef}
                 autoPlay={autoplay}
-                width="320px"
+                width="500px"
             />
         </div>
     );

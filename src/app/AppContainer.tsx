@@ -31,7 +31,7 @@ export const AppContainer: React.FC = () => {
               <p>playlist: <input type="text" value={playlist} onChange={(e)=> setPlaylist(e.currentTarget.value)} /></p>
             </div>
             <div className="c-AppContainer__player">
-              <HLSPlayer playlist={playlist} />
+              <HLSPlayer playlist={playlist} putLog={true} />
             </div>
         </div>
       </div>

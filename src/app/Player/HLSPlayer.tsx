@@ -6,9 +6,16 @@ interface HLSPlayerProps {
     autoplay?: boolean;
     muted?: boolean;
     putLog?: boolean;
+    inline?: boolean;
 }
 
-export function HLSPlayer({ playlist, autoplay = false, muted = false, putLog = false }: HLSPlayerProps) {
+export function HLSPlayer({
+    playlist,
+    autoplay = false,
+    muted = false,
+    putLog = false,
+    inline = false,
+}: HLSPlayerProps) {
     const m3u8 = playlist === '' ? null : playlist;
     const videoRef = useRef<null | HTMLVideoElement>(null);
 
@@ -36,6 +43,7 @@ export function HLSPlayer({ playlist, autoplay = false, muted = false, putLog = 
                 ref={videoRef}
                 autoPlay={autoplay}
                 width="500px"
+                playsInline={inline}
             />
         </div>
     );

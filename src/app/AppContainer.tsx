@@ -34,6 +34,15 @@ export const AppContainer: React.FC = () => {
               <HLSPlayer playlist={playlist} putLog={true} />
             </div>
         </div>
+        <div className="c-AppContainer-item">
+          <h2>play with playsInline</h2>
+            <div className="c-AppContainer__playlist">
+              <p>playlist: <input type="text" value={playlist} onChange={(e)=> setPlaylist(e.currentTarget.value)} /></p>
+            </div>
+            <div className="c-AppContainer__player">
+              <HLSPlayer playlist={playlist} inline={true} />
+            </div>
+        </div>
       </div>
     </div>
   );

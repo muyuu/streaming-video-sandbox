@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>check native HLS Streaming</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <% for (var filename in htmlWebpackPlugin.options.cssManifest) { %>
+    <link rel="stylesheet" href="/<%= htmlWebpackPlugin.options.cssManifest[filename] %>" />
+    <% } %>
+  </head>
+  <body>
+    <div id="app"></div>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script src="/<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
+    <% } %>
+  </body>
+</html>

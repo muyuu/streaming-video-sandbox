@@ -3,9 +3,11 @@ import { videoTagEvents } from './video_tag_events';
 
 interface HLSPlayerProps {
     playlist: string;
+    autoplay?: boolean;
+    muted?: boolean;
 }
 
-export function HLSPlayer({ playlist }: HLSPlayerProps) {
+export function HLSPlayer({ playlist, autoplay = false, muted = false }: HLSPlayerProps) {
     const m3u8 = playlist === '' ? null : playlist;
     const videoRef = useRef<null | HTMLVideoElement>(null);
 
@@ -24,7 +26,14 @@ export function HLSPlayer({ playlist }: HLSPlayerProps) {
 
     return (
         <div key={m3u8}>
-            <video src={m3u8} controls ref={videoRef} />
+            <video
+                muted={muted}
+                src={m3u8}
+                controls
+                ref={videoRef}
+                autoPlay={autoplay}
+                width="320px"
+            />
         </div>
     );
 };

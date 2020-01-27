@@ -1,0 +1,7 @@
+.c-AppContainer-wrapper {
+    display: flex;
+}
+
+.c-AppContainer-item {
+    margin: 10px 20px;
+}

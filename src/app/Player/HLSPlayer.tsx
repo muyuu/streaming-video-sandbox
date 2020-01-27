@@ -5,9 +5,10 @@ interface HLSPlayerProps {
     playlist: string;
     autoplay?: boolean;
     muted?: boolean;
+    putLog?: boolean;
 }
 
-export function HLSPlayer({ playlist, autoplay = false, muted = false }: HLSPlayerProps) {
+export function HLSPlayer({ playlist, autoplay = false, muted = false, putLog = false }: HLSPlayerProps) {
     const m3u8 = playlist === '' ? null : playlist;
     const videoRef = useRef<null | HTMLVideoElement>(null);
 
@@ -15,7 +16,9 @@ export function HLSPlayer({ playlist, autoplay = false, muted = false }: HLSPlay
         const videoTag = videoRef.current;
         videoTagEvents.forEach((name)=>{
             videoTag?.addEventListener(name, (e: any)=>{
-                console.debug('video tag Event: %s %O', e.type, e);
+                if (putLog) {
+                    console.debug('video tag Event: %s %O', e.type, e);
+                }
             });
         });
     }, [m3u8]);

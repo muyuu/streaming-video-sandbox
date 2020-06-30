@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?><MPD xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="dynamic" minBufferTime="PT5.000000S" xmlns:cenc="urn:mpeg:cenc:2013" publishTime="2020-06-29T11:29:18Z" minimumUpdatePeriod="PT5.000000S" availabilityStartTime="1970-01-01T00:00:00Z" timeShiftBufferDepth="PT60.000000S" suggestedPresentationDelay="PT15.000000S">
+  <BaseURL>https://raw.githubusercontent.com/</BaseURL>
+  <Period id="1593430123883" start="PT1593430108.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="muyuu/streaming-video-sandbox/master/media/ameba_5/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_5/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-2000000-720-1593430123883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="muyuu/streaming-video-sandbox/master/media/ameba_5muyuu/streaming-video-sandbox/master/media/ameba_5/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_5muyuu/streaming-video-sandbox/master/media/ameba_5/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-160000-720-1593430123883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="1593430138883" start="PT1593430123.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="muyuu/streaming-video-sandbox/master/media/ameba_0/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_0/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-2000000-720-1593430138883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="muyuu/streaming-video-sandbox/master/media/ameba_0/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_0/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-160000-720-1593430138883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="1593430153883" start="PT1593430138.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="muyuu/streaming-video-sandbox/master/media/ameba_1/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_1/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-2000000-720-1593430153883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="muyuu/streaming-video-sandbox/master/media/ameba_1/$RepresentationID$/$Time$.m4s" initialization="muyuu/streaming-video-sandbox/master/media/ameba_1/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-160000-720-1593430153883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

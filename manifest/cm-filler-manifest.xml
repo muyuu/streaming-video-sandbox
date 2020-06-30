@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?><MPD xmlns="urn:mpeg:dash:schema:mpd:2011" profiles="urn:mpeg:dash:profile:isoff-live:2011" type="dynamic" minBufferTime="PT5.000000S" xmlns:cenc="urn:mpeg:cenc:2013" publishTime="2020-06-29T11:29:18Z" minimumUpdatePeriod="PT5.000000S" availabilityStartTime="1970-01-01T00:00:00Z" timeShiftBufferDepth="PT60.000000S" suggestedPresentationDelay="PT15.000000S">
+  <BaseURL>https://feature-media-proxy-fixtimerange.abema.io/</BaseURL>
+  <Period id="1593430123883" start="PT1593430108.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="mp4sa/ameba_5/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_5/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-4000000-1080-1593430123883" bandwidth="4000000" codecs="avc1.4D401F" frameRate="30/1" height="1080" width="1920" scanType="progressive"></Representation>
+      <Representation id="video-2000000-720-1593430123883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+      <Representation id="video-900000-480-1593430123883" bandwidth="900000" codecs="avc1.4D401F" frameRate="30/1" height="480" width="854" scanType="progressive"></Representation>
+      <Representation id="video-550000-360-1593430123883" bandwidth="550000" codecs="avc1.4D401F" frameRate="30/1" height="360" width="640" scanType="progressive"></Representation>
+      <Representation id="video-240000-240-1593430123883" bandwidth="240000" codecs="avc1.4D401F" frameRate="30/1" height="240" width="426" scanType="progressive"></Representation>
+      <Representation id="video-128000-180-1593430123883" bandwidth="128000" codecs="avc1.4D401F" frameRate="30/1" height="180" width="320" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="mp4sa/ameba_5/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_5/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-192000-1080-1593430123883" bandwidth="192000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-160000-720-1593430123883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-128000-360-1593430123883" bandwidth="128000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-64000-180-1593430123883" bandwidth="64000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="1593430138883" start="PT1593430123.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="mp4sa/ameba_0/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_0/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-4000000-1080-1593430138883" bandwidth="4000000" codecs="avc1.4D401F" frameRate="30/1" height="1080" width="1920" scanType="progressive"></Representation>
+      <Representation id="video-2000000-720-1593430138883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+      <Representation id="video-900000-480-1593430138883" bandwidth="900000" codecs="avc1.4D401F" frameRate="30/1" height="480" width="854" scanType="progressive"></Representation>
+      <Representation id="video-550000-360-1593430138883" bandwidth="550000" codecs="avc1.4D401F" frameRate="30/1" height="360" width="640" scanType="progressive"></Representation>
+      <Representation id="video-240000-240-1593430138883" bandwidth="240000" codecs="avc1.4D401F" frameRate="30/1" height="240" width="426" scanType="progressive"></Representation>
+      <Representation id="video-128000-180-1593430138883" bandwidth="128000" codecs="avc1.4D401F" frameRate="30/1" height="180" width="320" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="mp4sa/ameba_0/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_0/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-192000-1080-1593430138883" bandwidth="192000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-160000-720-1593430138883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-128000-360-1593430138883" bandwidth="128000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-64000-180-1593430138883" bandwidth="64000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="1593430153883" start="PT1593430138.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="mp4sa/ameba_1/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_1/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-4000000-1080-1593430153883" bandwidth="4000000" codecs="avc1.4D401F" frameRate="30/1" height="1080" width="1920" scanType="progressive"></Representation>
+      <Representation id="video-2000000-720-1593430153883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+      <Representation id="video-900000-480-1593430153883" bandwidth="900000" codecs="avc1.4D401F" frameRate="30/1" height="480" width="854" scanType="progressive"></Representation>
+      <Representation id="video-550000-360-1593430153883" bandwidth="550000" codecs="avc1.4D401F" frameRate="30/1" height="360" width="640" scanType="progressive"></Representation>
+      <Representation id="video-240000-240-1593430153883" bandwidth="240000" codecs="avc1.4D401F" frameRate="30/1" height="240" width="426" scanType="progressive"></Representation>
+      <Representation id="video-128000-180-1593430153883" bandwidth="128000" codecs="avc1.4D401F" frameRate="30/1" height="180" width="320" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="mp4sa/ameba_1/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_1/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0" r="2"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-192000-1080-1593430153883" bandwidth="192000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-160000-720-1593430153883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-128000-360-1593430153883" bandwidth="128000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-64000-180-1593430153883" bandwidth="64000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+  <Period id="1593430168883" start="PT1593430153.880000S">
+    <AdaptationSet mimeType="video/mp4" segmentAlignment="true">
+      <InbandEventStream schemeIdUri="urn:abema:mpeg:dash:event:092016" value="1"></InbandEventStream>
+      <SegmentTemplate timescale="90000" media="mp4sa/ameba_2/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_2/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="450000" t="0"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="video-4000000-1080-1593430168883" bandwidth="4000000" codecs="avc1.4D401F" frameRate="30/1" height="1080" width="1920" scanType="progressive"></Representation>
+      <Representation id="video-2000000-720-1593430168883" bandwidth="2000000" codecs="avc1.4D401F" frameRate="30/1" height="720" width="1280" scanType="progressive"></Representation>
+      <Representation id="video-900000-480-1593430168883" bandwidth="900000" codecs="avc1.4D401F" frameRate="30/1" height="480" width="854" scanType="progressive"></Representation>
+      <Representation id="video-550000-360-1593430168883" bandwidth="550000" codecs="avc1.4D401F" frameRate="30/1" height="360" width="640" scanType="progressive"></Representation>
+      <Representation id="video-240000-240-1593430168883" bandwidth="240000" codecs="avc1.4D401F" frameRate="30/1" height="240" width="426" scanType="progressive"></Representation>
+      <Representation id="video-128000-180-1593430168883" bandwidth="128000" codecs="avc1.4D401F" frameRate="30/1" height="180" width="320" scanType="progressive"></Representation>
+    </AdaptationSet>
+    <AdaptationSet mimeType="audio/mp4" segmentAlignment="true">
+      <SegmentTemplate timescale="44100" media="mp4sa/ameba_2/$RepresentationID$/$Time$.m4s" initialization="mp4sa/ameba_2/$RepresentationID$/init.m4s">
+        <SegmentTimeline>
+          <S d="220500" t="0"></S>
+        </SegmentTimeline>
+      </SegmentTemplate>
+      <Representation id="audio-192000-1080-1593430168883" bandwidth="192000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-160000-720-1593430168883" bandwidth="160000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-128000-360-1593430168883" bandwidth="128000" codecs="mp4a.40.2"></Representation>
+      <Representation id="audio-64000-180-1593430168883" bandwidth="64000" codecs="mp4a.40.2"></Representation>
+    </AdaptationSet>
+  </Period>
+</MPD>

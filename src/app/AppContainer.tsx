@@ -1,47 +1,44 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { HLSPlayer } from './Player/HLSPlayer';
+import { detectStreamType, StreamType } from './stream_types';
+import { DashPlayer } from './Player/DashPlayer';
 
 export const AppContainer: React.FC = () => {
-  const [ playlist, setPlaylist ] = useState('');
-  const defaultVODPlaylist = 'https://dev-vod-abematv.akamaized.net/preview/program/9999-1_s2_p1/playlist.m3u8?vvvv=true';
+  const [ manifest, setManifest ] = useState('');
+  const [ streamType, setStreamType ] = useState<null | StreamType>(null);
+
+  const onChangePlaylist =  (e: React.ChangeEvent<HTMLInputElement>) => {
+    const input = e.currentTarget.value;
+    setManifest(input);
+  };
+
+  const onSetPlaylist = () => {
+    const current = detectStreamType(manifest);
+    setStreamType(current);
+  };
+
+  useEffect(() => {
+
+  }, [streamType]);
 
   return (
     <div className="c-AppContainer">
       <div className="c-AppContainer-wrapper">
+        <div className="c-AppContainer-input">
+          <input type={"text"} value={manifest} onChange={onChangePlaylist} />
+          <button type="button" onClick={onSetPlaylist}>set playlist</button>
+        </div>
+
         <div className="c-AppContainer-item">
-          <h2>autoplay</h2>
           <div className="c-AppContainer__player">
-            <HLSPlayer playlist={defaultVODPlaylist} autoplay={true} muted={false} />
+            {streamType === StreamType.DASH ? (
+              <DashPlayer manifest={manifest} putLog={true} />
+            ) : null}
+            {streamType === StreamType.HLS ? (
+              <HLSPlayer manifest={manifest} putLog={true} />
+            ) : null}
           </div>
-        </div>
-
-        <div className="c-AppContainer-item">
-          <h2>muted autoplay</h2>
-            <div className="c-AppContainer__player">
-              <HLSPlayer playlist={defaultVODPlaylist} autoplay={true} muted={true} />
-            </div>
-        </div>
-      </div>
-
-      <div className="c-AppContainer-wrapper">
-        <div className="c-AppContainer-item">
-          <h2>play</h2>
-            <div className="c-AppContainer__playlist">
-              <p>playlist: <input type="text" value={playlist} onChange={(e)=> setPlaylist(e.currentTarget.value)} /></p>
-            </div>
-            <div className="c-AppContainer__player">
-              <HLSPlayer playlist={playlist} putLog={true} />
-            </div>
-        </div>
-        <div className="c-AppContainer-item">
-          <h2>play with playsInline</h2>
-            <div className="c-AppContainer__playlist">
-              <p>playlist: <input type="text" value={playlist} onChange={(e)=> setPlaylist(e.currentTarget.value)} /></p>
-            </div>
-            <div className="c-AppContainer__player">
-              <HLSPlayer playlist={playlist} inline={true} />
-            </div>
         </div>
       </div>
     </div>

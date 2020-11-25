@@ -1,50 +1,75 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+import Hls from 'hls.js';
 import { videoTagEvents } from './video_tag_events';
-
-interface HLSPlayerProps {
-    playlist: string;
-    autoplay?: boolean;
-    muted?: boolean;
-    putLog?: boolean;
-    inline?: boolean;
-}
+import { PlayerProps } from './player_interface';
 
 export function HLSPlayer({
-    playlist,
-    autoplay = false,
-    muted = false,
-    putLog = false,
-    inline = false,
-}: HLSPlayerProps) {
-    const m3u8 = playlist === '' ? null : playlist;
+    manifest,
+    putLog,
+    inline,
+}: PlayerProps) {
     const videoRef = useRef<null | HTMLVideoElement>(null);
+    const [lib, setLib] = useState<null | Hls>(null);
+
+    const cleanup = () => {
+        if (lib === null) return;
+        destroyHLSJS(lib);
+        setLib(null);
+    };
 
     useEffect(()=>{
         const videoTag = videoRef.current;
-        videoTagEvents.forEach((name)=>{
-            videoTag?.addEventListener(name, (e: any)=>{
-                if (putLog) {
-                    console.debug('video tag Event: %s %O', e.type, e);
-                }
-            });
-        });
-    }, [m3u8]);
+        if (videoTag === null) return;
 
-    if (m3u8 === null) {
-        return null;
-    }
+        bindHLSJS(videoTag, manifest, (hls) => {
+            setLib(hls);
+            console.log('ready to play for hls.js');
+            setEvents(videoTag, !!putLog);
+        });
+
+        return cleanup;
+    }, []);
 
     return (
-        <div key={m3u8}>
+        <div>
             <video
-                muted={muted}
-                src={m3u8}
-                controls
                 ref={videoRef}
-                autoPlay={autoplay}
                 width="500px"
                 playsInline={inline}
+                controls
             />
         </div>
     );
-};
+}
+
+function bindHLSJS(
+  videoTag: HTMLVideoElement,
+  manifest: string,
+  onReady: (hls: Hls) => void,
+) {
+    if (!Hls.isSupported()) return;
+
+    const hls = new Hls();
+    hls.loadSource(manifest);
+    hls.attachMedia(videoTag);
+    hls.on(Hls.Events.MANIFEST_PARSED, function() {
+        onReady(hls);
+    });
+}
+
+function destroyHLSJS(lib: Hls) {
+    lib.detachMedia();
+    lib.destroy();
+}
+
+function setEvents(video: HTMLVideoElement, putLog: boolean) {
+    if (!putLog) return;
+
+    videoTagEvents.forEach((name) => {
+        video.addEventListener(name, (e: any)=>{
+            if (putLog) {
+                console.debug('video tag Event: %s %O', e.type, e);
+            }
+        });
+    });
+}
